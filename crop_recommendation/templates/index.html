@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0fff0;
+            padding: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post" action="/predict">
+        <h2>Crop Recommendation System</h2>
+        <input type="text" name="N" placeholder="Nitrogen (N)" required>
+        <input type="text" name="P" placeholder="Phosphorus (P)" required>
+        <input type="text" name="K" placeholder="Potassium (K)" required>
+        <input type="text" name="temperature" placeholder="Temperature (°C)" required>
+        <input type="text" name="humidity" placeholder="Humidity (%)" required>
+        <input type="text" name="ph" placeholder="pH Level" required>
+        <input type="text" name="rainfall" placeholder="Rainfall (mm)" required>
+        <button type="submit">Predict Crop</button>
+        <p>{{ prediction_text }}</p>
+    </form>
+
+</body>
+</html>
