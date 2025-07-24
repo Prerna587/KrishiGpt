@@ -3,8 +3,8 @@ import numpy as np
 import pickle
 
 # Load the model and scaler
-model = pickle.load(open('crop_recommendation/crop_model.pkl', 'rb'))
-scaler = pickle.load(open('crop_recommendation/crop_scaler.pkl', 'rb'))
+model = pickle.load(open('Crop Recommendation/crop_model.pkl', 'rb'))
+scaler = pickle.load(open('Crop Recommendation/crop_scaler.pkl', 'rb'))
 
 app = Flask(__name__)
 

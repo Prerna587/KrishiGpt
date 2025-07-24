@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fertilizer Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef;
+            padding: 30px;
+        }
+        .form-box {
+            background: white;
+            padding: 20px;
+            width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .result {
+            margin-top: 20px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h2>Fertilizer Recommendation</h2>
+        <form method="post" action="/predict">
+            <input type="number" name="temperature" placeholder="Temperature (°C)" required>
+            <input type="number" name="humidity" placeholder="Humidity (%)" required>
+            <input type="number" name="moisture" placeholder="Moisture (%)" required>
+            <select name="soil" required>
+                <option disabled selected>Select Soil Type</option>
+                <option value="Loamy">Loamy</option>
+                <option value="Sandy">Sandy</option>
+                <option value="Black">Black</option>
+                <option value="Red">Red</option>
+                <option value="Clayey">Clayey</option>
+            </select>
+            <select name="crop" required>
+                <option disabled selected>Select Crop Type</option>
+                <option value="Sugarcane">Sugarcane</option>
+                <option value="Cotton">Cotton</option>
+                <option value="Maize">Maize</option>
+                <option value="Paddy">Paddy</option>
+                <option value="Barley">Barley</option>
+                <option value="Wheat">Wheat</option>
+                <option value="Millets">Millets</option>
+            </select>
+            <input type="number" name="nitrogen" placeholder="Nitrogen" required>
+            <input type="number" name="potassium" placeholder="Potassium" required>
+            <input type="number" name="phosphorous" placeholder="Phosphorous" required>
+            <button type="submit">Predict Fertilizer</button>
+        </form>
+        <div class="result">{{ prediction_text }}</div>
+    </div>
+</body>
+</html>
